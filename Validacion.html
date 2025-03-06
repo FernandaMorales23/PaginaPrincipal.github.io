@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eliminador de Etiquetas Peligrosas</title>
+<script>
+function eliminarEtiquetasPeligrosas(html) {
+var regex = /<[^>]+>/g;
+return html.replace(regex, '');
+}
+function procesarHTML() {
+var inputHTML = document.getElementById('inputHTML').value;
+var resultado = eliminarEtiquetasPeligrosas(inputHTML);
+document.getElementById('resultado').textContent = resultado;
+}
+</script>
+</head>
+<body>
+<h1>Eliminador</h1>
+<p>mete el codigo html</p>
+<textarea id="inputHTML" rows="10" cols="50"></textarea><br><br>
+<button onclick="procesarHTML()">Procesar</button>
+
+<h2>Resultado:</h2>
+<pre id="resultado"></pre>
+</body>
+</html>
